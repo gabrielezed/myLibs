@@ -1,23 +1,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-
-/* Dynamic Array Struct */
-typedef struct dynArr{
-	int *data;
-	size_t size;
-	size_t len;
-}dynArr;
-
-
-/* Dynamic Array Initialization Function */
+/* Init */
 void arrayInit(dynArr *arr){
 	arr->data = NULL;
 	arr->size = 0;
 	arr->len = 0;
 }
 
-/* Dynamic Array Push Function */
+
+/* Push */
 void arrayPush(dynArr *arr, int d){
 	size_t newSize;
 	if(arr->size == arr->len){
@@ -42,7 +34,7 @@ void arrayPush(dynArr *arr, int d){
 	arr->len++;
 }
 
-/* Dynamic Array Free */
+/* Free */
 void arrayFree(dynArr *arr){
 	free(arr->data);
 	arr->data = NULL;
@@ -50,7 +42,3 @@ void arrayFree(dynArr *arr){
         arr->len = 0;
 }
 
-
-int main(void){
-	return 0;
-}
